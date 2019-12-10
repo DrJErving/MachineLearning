@@ -37,7 +37,8 @@ public class NeuralNetworkNoMatrix {
         double biasOutput = r.nextDouble() * 2 - 1;
 
         int iteration = 1;
-        for (int i = 0; i < 5000; i++) {
+        int maxLoops = 5000;
+        for (int i = 0; i < maxLoops; i++) {
             //assign input and expected values
             input1 = arregloXor[i % 4][0];
             input2 = arregloXor[i % 4][1];
@@ -115,6 +116,19 @@ public class NeuralNetworkNoMatrix {
             }
             System.out.println("Iteration: " + i);
             System.out.println(input1 + " XOR " + input2 + " = " + o1);
+
+            if (i == maxLoops -1) {
+                System.out.println("\nValues of weights and biases");
+                System.out.println(input1H1);
+                System.out.println(input2H1);
+                System.out.println(input1H2);
+                System.out.println(input2H2);
+                System.out.println(H1O1);
+                System.out.println(H2O1);
+                System.out.println(biasNeuronH1);
+                System.out.println(biasNeuronH2);
+                System.out.println(biasOutput);
+            }
         }
     }
 
